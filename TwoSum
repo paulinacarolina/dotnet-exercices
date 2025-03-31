@@ -1,29 +1,15 @@
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.Linq;
-
-int[] TwoSum(int[] nums, int target)
-{
-    int[] ints = new int[2];
-
-    for (int i = 0; i < nums.Length - 1; i++)
-    {
-        for (int j = i +1; j < nums.Length; j++)
-        {
-             
-            if (nums[i] + nums[j] == target)
-            {
-                ints[0] = i;
-                ints[1] = j;
-
+public class Solution {
+    public int[] TwoSum(int[] nums, int target) {
+        List<int> result = new List<int>();
+        for(int i = 0 ; i<= nums.Length-1; i++){
+            for (int j = i + 1; j < nums.Length; j++)
+            if(nums[i] + nums[j] == target){
+                 return new int[] { i, j };
             }
-            
-        }
-        
-
+         }
+        return new int[] {};
+        } 
     }
-    return ints;
-}
 
 
 int[] nums = { 3,2,4 };
